@@ -11,7 +11,8 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+   
 </head>
 
 <body id="page-top">
@@ -26,41 +27,49 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Countries Insight</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Login">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Scandinavian Insight</a></li>
+                    <partial name="_LoginPartial" />
+                    
+                   @* <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="/Log in">Log in</a>
+                    </li>*@
 
                 </ul>
             </div>
         </div>
     </nav>
-<main role="main" class="pb-3">
+<main role="main">
     @RenderBody()
 </main>
 
     <!-- Footer-->
-    <footer class="footer py-4 bg-dark">
-        <div class="container">
-            <div class="footer-row">
+<footer class="footer py-4 bg-dark">
+    <div class="container">
+        <div class="footer-row">
 
-                <div class="col-lg-4 title-footer">
-                    <h6 class="copyright">Copyright &copy; Rabbit Bank co 2023</h6>
-                </div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <h4 class="title-footer">Rabbit Bank Co</h4>
-                </div>
+            <div class="col-lg-4 title-footer">
+                <h6 class="copyright">Copyright &copy; Rabbit Bank co 2023</h6>
+            </div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <h4 class="title-footer">Rabbit Bank Co</h4>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="~/js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+@*<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+*@
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>
