@@ -641,8 +641,10 @@ progress {
   margin-left: auto;
 }
 
+
+
 @media (min-width: 576px) {
-  .container-sm, .container {
+    .container-sm, .container {
     max-width: 540px;
   }
 }
@@ -11418,6 +11420,10 @@ p {
 }
 /* _____________________________________________________________________________ */
 
+.background-login {
+    max-height: 100vh;
+    max-width: 100vw;
+}
 
 header.masthead {
   padding-top: 10.5rem;
@@ -11853,3 +11859,54 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 /*________ LOGinPAGE ________*/
+
+#container-fluid2 {
+    padding: 0;
+    margin: 0;
+}
+#row2 {
+    padding: 0;
+    margin: 0;
+}
+
+.bg-custom-right {
+    background-image: url('/assets/img/navy-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-custom-left {
+    background-image: url('../assets/img/dall·e 2023-03-30 11.12.25 - add these flags in a bank enviorment. 3d .png');
+    background-size: cover;
+    background-position: right;
+              
+}
+
+
+
+.login,
+.image {
+    min-height: 100vh;
+}
+
+
+.bg-image {
+    background-image: url('https://bootstrapious.com/i/snippets/sn-page-split/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.display-4 {
+    color: #ffc800;
+    padding-bottom: 15px;
+}
+
+.title-2 {
+    color: #ffc800;
+    text-decoration: none;
+}
+
+#submit {
+    text-decoration: none;
+    background-color: #ffc800;
+}                                               
