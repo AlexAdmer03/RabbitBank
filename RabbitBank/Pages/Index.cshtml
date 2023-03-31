@@ -28,7 +28,12 @@
                     <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <h6 class="country-details">Customers: 1 434 533</h6>
+                                @foreach (var a in Model.DataFromCountriesTotal)
+                                {
+                                    @a.TotalAccounts
+                                    @a.TotalBalance
+                                }
+                                <h6 class="country-details"></h6>
                                 <h6 class="country-details">Accounts: 1 943 432</h6>
                                 <h6 class="country-details">Capital: 53 243 420 SEK</h6>
                                 <h5 class="hover-row">Click to show details</h5>

@@ -2,31 +2,26 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RabbitBank.BankAppData;
+using RabbitBank.Models;
 using RabbitBank.Pages.ViewModels;
+using RabbitBank.Services;
 
 namespace RabbitBank.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        //private readonly BankAppDataContext _dbContext;
-
-        //public IndexModel(BankAppDataContext dbContext)
-        //{
-        //    _dbContext = dbContext;
-        //}
-
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly IindexService _indexService;
+        public IndexModel(IindexService indexService)
         {
-            _logger = logger;
+            _indexService = indexService;
         }
+        
 
-        public List<CustomerModel> Customers { get; set; }
+        public List<CountriesModel> DataFromCountriesTotal { get; set; }
 
         public void OnGet()
         {
-           
+            DataFromCountriesTotal = _indexService.GetCountriesData();
         }
     }
 }

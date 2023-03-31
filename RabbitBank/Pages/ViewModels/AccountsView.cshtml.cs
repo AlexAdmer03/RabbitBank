@@ -8,7 +8,7 @@ namespace RabbitBank.Pages.ViewModels
         public int AccaountId { get; set; }
         public string Frequency { get; set; }
         public DateTime Created { get; set; }
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
         public void OnGet()
         {
         }

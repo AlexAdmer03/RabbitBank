@@ -1,12 +1,7 @@
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace RabbitBank.Pages.ViewModels
+﻿namespace RabbitBank.Models
 {
-    public class CustomerModel : PageModel
+    public class CustomerModel
     {
-
         public int CustomerId { get; set; }
         public string Gender { get; set; }
         public string Givenname { get; set; }
@@ -21,11 +16,5 @@ namespace RabbitBank.Pages.ViewModels
         public int TelephoneCountryCode { get; set; }
         public int TelephoneNumber { get; set; }
         public string Email { get; set; }
-
-
-        public void OnGet()
-        {
-
-        }
     }
 }

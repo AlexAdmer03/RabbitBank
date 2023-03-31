@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RabbitBank.BankAppData;
 using RabbitBank.Data;
+using RabbitBank.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,8 @@ builder.Services.AddTransient<DataInitializer>();
 
 builder.Services.AddDbContext<BankAppDataContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddTransient<IindexService, IndexService>();
 
 var app = builder.Build();
 
