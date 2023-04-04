@@ -10,34 +10,38 @@ namespace RabbitBank.Services
         {
             _dbContext = dbContext;
         }
+
         private readonly BankAppDataContext _dbContext;
 
         public List<CountriesModel> GetCountriesData()
         {
-            var countriesList = new List<string>() { "Sweden, Norway, Denmark, Finland" };
+            var countriesList = new List<string>() { "Sweden", "Norway", "Denmark", "Finland" };
             var countryList = new List<CountriesModel>();
 
             foreach (var country in countriesList)
             {
                 var countries = _dbContext.Customers
-                    .Where(C => C.Country == country)
-                    .Join(_dbContext.Accounts, C => C.CustomerId, A => A.AccountId,
-                        (C, A) => new { Customer = C, Account = A })
-                    .GroupBy(CA => CA.Customer.Country)
+                    .Where(c => c.Country == country)
+                    .Join(_dbContext.Dispositions, c => c.CustomerId, d => d.CustomerId,
+                        (c, d) => new { Customer = c, AccountId = d.AccountId })
+                    .Join(_dbContext.Accounts, cd => cd.AccountId, a => a.AccountId,
+                        (cd, a) => new { Customer = cd.Customer, Account = a })
+                    .GroupBy(ca => ca.Customer.Country)
                     .Select(group => new CountriesModel
                     {
                         Country = group.Key,
                         TotalAccounts = group.Count(),
-                        TotalBalance = group.Sum(CA => CA.Account.Balance),
+                        TotalBalance = group.Sum(ca => ca.Account.Balance),
                     })
                     .FirstOrDefault();
+
                 if (countries != null)
                 {
                     countryList.Add(countries);
                 }
             }
+
             return countryList;
         }
     }
-
 }

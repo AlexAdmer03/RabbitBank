@@ -19,97 +19,30 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Scandinavian Insight</h2>
-            <h3 class="section-subheading">See our full reach all around scandinavia</h3>
+            <h3 class="section-subheading">See our full reach all around Scandinavia</h3>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                @foreach (var a in Model.DataFromCountriesTotal)
-                                {
-                                    @a.TotalAccounts
-                                    @a.TotalBalance
-                                }
-                                <h6 class="country-details"></h6>
-                                <h6 class="country-details">Accounts: 1 943 432</h6>
-                                <h6 class="country-details">Capital: 53 243 420 SEK</h6>
-                                <h5 class="hover-row">Click to show details</h5>
+            @foreach (var country in Model.DataFromCountriesTotal)
+            {
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    @*     <h6 class="country-details">Customers: @country.TotalCustomers</h6>   *@
+                                    <h6 class="country-details">Accounts <i class="fa-solid fa-users"></i> : @country.TotalAccounts</h6>
+                                    <h6 class="country-details">Capital <i class="fa-solid fa-money-bill-wave"></i> : @country.TotalBalance.ToString("C")</h6>
+                                    <h5 class="hover-row">Click to show details</h5>
+                                </div>
                             </div>
+                            <img class="img-fluid" src="assets/img/portfolio/@(country.Country.ToLower()).png" alt="@country.Country" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">@country.Country.ToUpper()</div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/sweden.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">SWEDEN</div>
-
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <!-- Portfolio item 2-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <h6 class="country-details">Customers: 531 640</h6>
-                                <h6 class="country-details">Accounts: 904 414</h6>
-                                <h6 class="country-details">Capital: 24 345 239 NOK</h6>
-                                <h5 class="hover-row">Click to show details</h5>
-
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/norway.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">NORWAY</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4">
-                <!-- Portfolio item 3-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <h6 class="country-details">Customers: 124 656</h6>
-                                <h6 class="country-details">Accounts: 293 125</h6>
-                                <h6 class="country-details">Capital: 8 548 542 DKK</h6>
-                                <h5 class="hover-row">Click to show details</h5>
-
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/denmark.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">DENMARK</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-                <!-- Portfolio item 4-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <h6 class="country-details">Customers: 225 536</h6>
-                                <h6 class="country-details">Accounts: 483 875</h6>
-                                <h6 class="country-details">Capital: €11 145 534</h6>
-                                <h5 class="hover-row">Click to show details</h5>
-
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/finland.png" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">FINLAND</div>
-
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
