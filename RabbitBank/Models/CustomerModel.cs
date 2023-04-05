@@ -12,7 +12,8 @@
         public string Country { get; set; }
         public string Countrycode { get; set; }
         public DateTime Birthday { get; set; }
-        public int NationalId { get; set; }
+        public string NationalId { get; set; }
+        public decimal Balance { get; set; }
         public int TelephoneCountryCode { get; set; }
         public int TelephoneNumber { get; set; }
         public string Email { get; set; }

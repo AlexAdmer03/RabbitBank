@@ -4,9 +4,9 @@ using RabbitBank.Models;
 
 namespace RabbitBank.Services
 {
-    public class IndexService : IindexService
+    public class CountryService : ICountryService
     {
-        public IndexService(BankAppDataContext dbContext)
+        public CountryService(BankAppDataContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -43,5 +43,32 @@ namespace RabbitBank.Services
 
             return countryList;
         }
+        public List<CustomerModel> GetTopTenCustomers (string country)
+        {
+            var topCustomers = _dbContext.Customers
+                .Where(c => c.Country == country)
+                .Join(_dbContext.Dispositions, c => c.CustomerId, d => d.CustomerId,
+                    (c, d) => new { Customer = c, AccountId = d.AccountId })
+                .Join(_dbContext.Accounts, cd => cd.AccountId, a => a.AccountId,
+                    (cd, a) => new { Customer = cd.Customer, Account = a })
+                .OrderByDescending(ca => ca.Account.Balance)
+                .Take(10)
+                .Select(ca => new CustomerModel
+                {
+                    CustomerId = ca.Customer.CustomerId,
+                    Givenname = ca.Customer.Givenname,
+                    Surname = ca.Customer.Surname,
+                    City = ca.Customer.City,
+                    NationalId = ca.Customer.NationalId,
+                    Balance = ca.Account.Balance
+                })
+                .ToList();
+
+            return topCustomers;
+        }
+
+
+
     }
+
 }

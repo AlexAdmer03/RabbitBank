@@ -24,7 +24,7 @@ builder.Services.AddTransient<DataInitializer>();
 builder.Services.AddDbContext<BankAppDataContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddTransient<IindexService, IndexService>();
+builder.Services.AddTransient<ICountryService, CountryService>();
 
 var app = builder.Build();
 
