@@ -1,12 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RabbitBank.Models;
+using RabbitBank.Services;
 
 namespace RabbitBank.Pages.ShowCountries
 {
     public class DenmarkDetailsModel : PageModel
     {
-        public void OnGet()
+        private readonly ICountryService _countryService;
+
+        public DenmarkDetailsModel(ICountryService countryService)
         {
+            _countryService = countryService;
+        }
+        public List<CustomerModel> TopTenDen { get; set; }
+        public void OnGet(string country)
+        {
+            TopTenDen = _countryService.GetTopTenCustomers("Denmark");
         }
     }
 }

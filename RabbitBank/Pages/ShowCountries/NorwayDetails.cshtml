@@ -2,3 +2,29 @@
 @model RabbitBank.Pages.ShowCountries.NorwayDetailsModel
 @{
 }
+
+<h1>Top 10 Customers in "Norway" with the Highest Balance</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>National ID</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.TopTenNor)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@($"{customer.Givenname} {customer.Surname}")</td>
+                <td>@customer.City</td>
+                <td>@customer.NationalId</td>
+                <td>@customer.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
