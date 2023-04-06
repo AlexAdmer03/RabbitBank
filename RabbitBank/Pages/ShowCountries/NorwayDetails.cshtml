@@ -3,19 +3,20 @@
 @{
 }
 
-<h1>Top 10 Customers in "Norway" with the Highest Balance</h1>
-
-<table>
-    <thead>
+<div class="table-responsive m-b-40 table-bg-image">
+    <h1>Top 10 Customers in "Norway" with the Highest Balance</h1>
+    <table class="table table-borderless table-data3">
+        <thead>
         <tr>
             <th>Customer ID</th>
             <th>Name</th>
             <th>City</th>
             <th>National ID</th>
             <th>Balance</th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         @foreach (var customer in Model.TopTenNor)
         {
             <tr>
@@ -24,7 +25,19 @@
                 <td>@customer.City</td>
                 <td>@customer.NationalId</td>
                 <td>@customer.Balance</td>
+                <td>
+                    <button class="btn btn-secondary" type="button" style="background-color: #ffc800; color: #ffffff;"
+                            data-toggle="collapse" data-target="#more-info-@customer.CustomerId">
+                        Show More
+                    </button>
+                </td>
+            </tr>
+            <tr id="more-info-@customer.CustomerId" class="collapse">
+                <td colspan="6">
+                    <!-- additional customer information goes here -->
+                </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
