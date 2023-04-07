@@ -4,43 +4,44 @@
 }
 
 
+<div class="Table-container">
 
-<div class="table-responsive m-b-40 table-bg-image">
-    <h1>Top 10 Customers in "Sweden" with the Highest Balance</h1>
-    <table class="table table-borderless table-data3">
-        <thead>
-            <tr>
-                <th>Customer ID</th>
-                <th>Name</th>
-                <th>City</th>
-                <th>National ID</th>
-                <th>Balance</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var customer in Model.TopTenSwe)
-            {
+    <div class="table-responsive m-b-40" style="margin-top: 150px; margin-left: 170px; margin-bottom: 75px;">
+        <h1 style="text-align: center; margin-bottom: 15px; color: #ffc800">Top 10 Customers in "Sweden" with the Highest Balance</h1>
+        <table class="table table-borderless table-data3">
+            <thead>
                 <tr>
-                    <td>@customer.CustomerId</td>
-                    <td>@($"{customer.Givenname} {customer.Surname}")</td>
-                    <td>@customer.City</td>
-                    <td>@customer.NationalId</td>
-                    <td>@customer.Balance</td>
-                    <td>
-                        <button class="btn btn-secondary" type="button" style="background-color: #ffc800; color: #ffffff;"
-                            data-toggle="collapse" data-target="#more-info-@customer.CustomerId">
-                            Show More
-                        </button>
-                    </td>
+                    <th style="color: aliceblue">Customer ID</th>
+                    <th style="color: aliceblue">Name</th>
+                    <th style="color: aliceblue">City</th>
+                    <th style="color: aliceblue">National ID</th>
+                    <th style="color: aliceblue">Balance</th>
+                    <th style="color: aliceblue"></th>
                 </tr>
-                <tr id="more-info-@customer.CustomerId" class="collapse">
-                    <td colspan="6">
-                        <!-- additional customer information goes here -->
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model.TopTenSwe)
+                {
+                    <tr>
+                        <td style="color: aliceblue">@customer.CustomerId</td>
+                        <td style="color: aliceblue">@($"{customer.Givenname} {customer.Surname}")</td>
+                        <td style="color: aliceblue">@customer.City</td>
+                        <td style="color: aliceblue">@customer.NationalId</td>
+                        <td style="color: aliceblue">@customer.Balance</td>
+                        <td>
+                            <button class="btn btn-secondary" type="button" style="background-color: #ffc800; color: #ffffff;"
+                                data-toggle="collapse" data-target="#more-info-@customer.CustomerId">
+                                Show More
+                            </button>
+                        </td>
+                    </tr>
+                    <tr id="more-info-@customer.CustomerId" class="collapse">
+                        <td colspan="6">
+                            <!-- additional customer information goes here -->
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
-
