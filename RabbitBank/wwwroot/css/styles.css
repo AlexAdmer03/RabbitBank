@@ -11301,14 +11301,14 @@ textarea.form-control-lg {
   }
 }
 html {
-  scroll-padding-top: 4.5rem;
+    scroll-padding-top: 4.5rem;
 }
 
 body {
-  position: relative;
-  overflow-x: hidden;
+    position: relative;
+    overflow-x: hidden;
 }
-
+    
 p {
   line-height: 1.75;
 }
@@ -11419,7 +11419,7 @@ p {
     margin-right: 0;
   }
 }
-/* _____________________________________________________________________________ */
+/* ____________________________________________________________________________________________________________________________________________________________ */
 
 .background-login {
     max-height: 100vh;
@@ -11488,13 +11488,13 @@ link[rel="icon"] {
   margin-top: 40px;
 }
 
-.Table-container {
+ .Table-container {
     background-image: url("../assets/img/navy-bg.jpg");
     background-size: cover;
     background-position: center;
-}
+ }
 
-/* ________________________________________________________________ */
+/* __________________________________________________________________________________________________________________________________________________________________ */
 header.masthead .masthead-subheading {
     font-size: 1.5rem;
     font-style: italic;

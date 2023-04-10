@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <link href="~/css/styles.css" rel="stylesheet" />
-   
+
 </head>
 
-<body id="page-top">
+<body id="page-top" class="Table-container">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
@@ -32,24 +32,27 @@
             </div>
         </div>
     </nav>
-<main role="main">
-    @RenderBody()
-</main>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+
 
     <!-- Footer-->
-<footer class="footer py-4 bg-dark">
-    <div class="container">
-        <div class="footer-row">
+    <footer class="footer py-4 bg-dark">
+        <div class="container">
+            <div class="footer-row">
 
-            <div class="col-lg-4 title-footer">
-                <h6 class="copyright">Copyright &copy; Rabbit Bank co 2023</h6>
-            </div>
-            <div class="col-lg-4 my-3 my-lg-0">
-                <h4 class="title-footer">Rabbit Bank Co</h4>
+                <div class="col-lg-4 title-footer">
+                    <h6 class="copyright">Copyright &copy; Rabbit Bank co 2023</h6>
+                </div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <h4 class="title-footer">Rabbit Bank Co</h4>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
     <!-- Bootstrap core JS-->
@@ -60,10 +63,9 @@
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-
-@*<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-*@
-@await RenderSectionAsync("Scripts", required: false)
+    @*<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    *@
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>
