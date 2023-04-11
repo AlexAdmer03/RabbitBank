@@ -1,0 +1,45 @@
+﻿@page
+@model RabbitBank.Pages.Customers.CustomerListModel
+@{
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <form method="get" class="mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" asp-for="SearchTerm" class="form-control" placeholder="Search by name" />
+            </div>
+            <div class="col-md-4">
+                <input type="text" asp-for="City" class="form-control" placeholder="Search by city" />
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+        <tr style="color: aliceblue;">
+            <th>Customer Number</th>
+            <th>Social Security Number</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+                <tr style="color: aliceblue;">
+                <td>@customer.CustomerId</td>
+                <td>@customer.NationalId</td>
+                <td>@customer.Givenname @customer.Surname</td>
+                <td>@customer.Streetaddress</td>
+                <td>@customer.City</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
