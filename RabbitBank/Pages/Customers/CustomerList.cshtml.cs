@@ -19,8 +19,7 @@ namespace RabbitBank.Pages.Customers
         [BindProperty(SupportsGet = true)]
         public string City { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public int PageNumber { get; set; } = 1;
+        [BindProperty(SupportsGet = true)] public int PageNumber { get; set; } = 1;
 
 
         public List<Customer> Customers { get; set; }
