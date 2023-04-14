@@ -24,9 +24,13 @@ namespace RabbitBank.Pages.Customers
 
         public List<Customer> Customers { get; set; }
 
-        public void OnGet(int PageSize)
+        public int TotalPages { get; set; }
+
+        public void OnGet(int pageSize = 50)
         {
-            Customers = _customerService.GetCustomers(SearchTerm, City, PageNumber, PageSize);
+            int totalCustomers = _customerService.GetTotalCustomersCount(SearchTerm, City);
+            TotalPages = (int)Math.Ceiling((double)totalCustomers / pageSize);
+            Customers = _customerService.GetCustomers(SearchTerm, City, PageNumber, pageSize);
         }
     }
 }
