@@ -24,11 +24,27 @@
     <table class="table">
         <thead>
             <tr style="color: aliceblue;">
-                <th>Customer Number</th>
+                <th>
+                    <a asp-route-SortColumn="CustomerNumber" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">
+                        Customer Number
+                    </a>
+                </th>
+
                 <th>Social Security Number</th>
-                <th>Name</th>
+
+                <th>
+                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="Name" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
+                        Name @(Model.SortColumn == "Name" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
+                    </a>
+                </th>
+
                 <th>Address</th>
-                <th>City</th>
+
+                <th>
+                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="City" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
+                        City @(Model.SortColumn == "City" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -54,7 +70,7 @@
             @if (Model.PageNumber > 2)
             {
                 <li class="page-item disabled">
-                    <span class="page-link" >...</span>
+                    <span class="page-link">...</span>
                 </li>
             }
 
