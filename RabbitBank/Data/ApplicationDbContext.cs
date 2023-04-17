@@ -9,5 +9,7 @@ namespace RabbitBank.Data
             : base(options)
         {
         }
+
+        public object Customers { get; internal set; }
     }
 }

@@ -26,9 +26,10 @@
             <tr style="color: aliceblue;">
                 <th>
                     <a asp-route-SortColumn="CustomerNumber" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">
-                        Customer Number
+                        Customer Number @(Model.SortColumn == "CustomerNumber" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
                     </a>
                 </th>
+
 
                 <th>Social Security Number</th>
 
@@ -45,6 +46,7 @@
                         City @(Model.SortColumn == "City" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
                     </a>
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +58,11 @@
                     <td>@customer.Givenname @customer.Surname</td>
                     <td>@customer.Streetaddress</td>
                     <td>@customer.City</td>
+                    <td>
+                        <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="CustomerCard" asp-route-id="@customer.CustomerId">
+                            Show More
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
