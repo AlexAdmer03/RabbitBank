@@ -1,4 +1,4 @@
-﻿namespace RabbitBank.Models
+﻿namespace RabbitBank.Pages.ViewModels
 {
     public class CustomerModel
     {

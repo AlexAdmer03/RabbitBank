@@ -1,4 +1,5 @@
 ﻿using RabbitBank.Models;
+using RabbitBank.Pages.ViewModels;
 
 namespace RabbitBank.Services
 {

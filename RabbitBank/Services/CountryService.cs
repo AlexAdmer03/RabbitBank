@@ -1,6 +1,7 @@
 ﻿using System.Data.Common;
 using RabbitBank.BankAppData;
 using RabbitBank.Models;
+using RabbitBank.Pages.ViewModels;
 
 namespace RabbitBank.Services
 {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using RabbitBank.Models;
+using RabbitBank.Pages.ViewModels;
 using RabbitBank.Services;
 
 namespace RabbitBank.Pages
