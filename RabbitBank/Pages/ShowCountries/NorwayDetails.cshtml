@@ -28,10 +28,9 @@
                         <td>@customer.NationalId</td>
                         <td >@customer.Balance</td>
                         <td>
-                            <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="/Customers/CustomerCard" asp-route-id="@customer.CustomerId">
+                            <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="CustomerCard" asp-route-customerId="@customer.CustomerId">
                                 Show More
                             </a>
-
                         </td>
                     </tr>
                     <tr id="more-info-@customer.CustomerId" class="collapse">

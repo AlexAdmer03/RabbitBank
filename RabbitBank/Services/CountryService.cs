@@ -61,7 +61,8 @@ namespace RabbitBank.Services
                     Surname = ca.Customer.Surname,
                     City = ca.Customer.City,
                     NationalId = ca.Customer.NationalId,
-                    Balance = ca.Account.Balance
+                    Balance = ca.Account.Balance,
+                    AccountId = ca.Account.AccountId
                 })
                 .ToList();
 

@@ -26,6 +26,8 @@ builder.Services.AddDbContext<BankAppDataContext>(options =>
 
 builder.Services.AddTransient<ICountryService, CountryService>();
 builder.Services.AddTransient<ICustomerService, CustomerService>();
+builder.Services.AddTransient<ICardService, CardService>();
+
 
 var app = builder.Build();
 

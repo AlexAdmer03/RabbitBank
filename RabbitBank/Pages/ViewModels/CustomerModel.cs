@@ -15,7 +15,8 @@
         public string NationalId { get; set; }
         public decimal Balance { get; set; }
         public int TelephoneCountryCode { get; set; }
-        public int TelephoneNumber { get; set; }
+        public string TelephoneNumber { get; set; }
         public string Email { get; set; }
+        public int AccountId { get; set; }
     }
 }

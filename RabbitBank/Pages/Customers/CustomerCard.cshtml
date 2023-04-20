@@ -3,3 +3,124 @@
 @{
 }
 
+<section class="section about-section" id="about" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse" id="card">
+            <div class="col-lg-6">
+                <div class="about-text go-to">
+                    <h3>Customer Details</h3>
+
+                    <div class="row about-list" style="color: aliceblue;">
+                        <div class="col-md-6">
+
+                            <div class="media">
+                                <label>Name</label>
+                                <p>@Model.CustomerCard.Givenname @Model.CustomerCard.Surname</p>
+                            </div>
+                            <div class="media">
+                                <label>Birthday</label>
+                                <p>@Model.CustomerCard.Birthday.ToShortDateString()</p>
+                            </div>
+                            <div class="media">
+                                <label>Gender</label>
+                                <p>@Model.CustomerCard.Gender</p>
+                            </div>
+                            <div class="media">
+                                <label>Email</label>
+                                <p>@Model.CustomerCard.Email</p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="media">
+                                <label>Phone</label>
+                                <p>@Model.CustomerCard.TelephoneNumber</p>
+                            </div>
+                            <div class="media">
+                                <label>Country</label>
+                                <p>@Model.CustomerCard.Country</p>
+                            </div>
+                            <div class="media">
+                                <label>City</label>
+                                <p>@Model.CustomerCard.City</p>
+                            </div>
+                            <div class="media">
+                                <label>Address</label>
+                                <p>@Model.CustomerCard.Streetaddress</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-avatar">
+                    <img src="~/assets/User-icon2-removebg-preview.png" title="" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <tr>
+                <th>
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Deposit
+                    </button>
+                </th>
+                <th>
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Withdraw
+                    </button>
+                </th>
+                <th>
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Transfer
+                    </button>
+                </th>
+                <th>
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> History
+                    </button>
+                </th>
+            </tr>
+
+        </div>
+
+        <div class="counter">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">@Model.CustomerCard.CustomerId</h6>
+                        <p class="m-0px font-w-600" style="color: aliceblue; font-size: 18px">Customer ID</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">@Model.CustomerCard.AccountId</h6>
+                        <p class="m-0px font-w-600" style="color: aliceblue; font-size: 18px">Account ID</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2">@Model.CustomerCard.Balance.ToString("C")</h6>
+                        <p class="m-0px font-w-600" style="color: aliceblue; font-size: 18px">Balance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

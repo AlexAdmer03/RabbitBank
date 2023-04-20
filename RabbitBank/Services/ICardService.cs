@@ -6,6 +6,6 @@ namespace RabbitBank.Services
 {
     public interface ICardService
     {
-
+        CustomerModel GetCustomerCard(int customerId);
     }
 }
