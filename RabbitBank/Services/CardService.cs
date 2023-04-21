@@ -16,6 +16,7 @@ namespace RabbitBank.Services
 
         public CustomerModel GetCustomerCard(int customerId)
         {
+
             var customerCard = _dbContext.Customers
                 .Where(c => c.CustomerId == customerId)
                 .Join(_dbContext.Dispositions, c => c.CustomerId, d => d.CustomerId,

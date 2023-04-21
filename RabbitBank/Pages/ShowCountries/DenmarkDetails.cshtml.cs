@@ -14,9 +14,11 @@ namespace RabbitBank.Pages.ShowCountries
             _countryService = countryService;
         }
         public List<CustomerModel> TopTenDen { get; set; }
-        public void OnGet(string country)
+        public int AccountId { get; set; }
+        public void OnGet(string country, int customerId)
         {
             TopTenDen = _countryService.GetTopTenCustomers("Denmark");
+            AccountId = customerId;
         }
     }
 }
