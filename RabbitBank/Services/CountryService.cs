@@ -23,7 +23,7 @@ namespace RabbitBank.Services
             {
                 var countries = _dbContext.Customers
                     .Where(c => c.Country == country)
-                    .Join(_dbContext.Dispositions, c => c.CustomerId, d => d.CustomerId,
+                    .Join(_dbContext.Dispositions.Where(d => d.Type == "OWNER"), c => c.CustomerId, d => d.CustomerId,
                         (c, d) => new { Customer = c, AccountId = d.AccountId })
                     .Join(_dbContext.Accounts, cd => cd.AccountId, a => a.AccountId,
                         (cd, a) => new { Customer = cd.Customer, Account = a })
