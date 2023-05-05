@@ -2,3 +2,51 @@
 @model RabbitBank.Pages.Transactions.TransferModel
 @{
 }
+
+<div class="containerT" style="margin-top: 13.5%; margin-bottom: 8%">
+    <div class="rowT">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border-primary" id="card">
+                <div class="card-body" style="background-color: #212529;">
+                    <h3 class="card-title" style="text-align: center; color: #FFC800; font-size: 40px;">Transfer</h3>
+                    <form method="post" style="margin-top: 25px;">
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label asp-for="SendingAccountId">Sending Account ID</label>
+                            <input asp-for="SendingAccountId" type="number" class="form-control" placeholder="Enter sending account ID" readonly="@Model.AccountId.HasValue">
+                            <span asp-validation-for="SendingAccountId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label asp-for="ReceivingAccountId">Receiving Account ID</label>
+                            <input asp-for="ReceivingAccountId" type="number" class="form-control" placeholder="Enter receiving account ID">
+                            <span asp-validation-for="ReceivingAccountId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label asp-for="Amount">Amount</label>
+                            <input asp-for="Amount" type="number" class="form-control" placeholder="Enter amount">
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label asp-for="Comments">Comments</label>
+                            <textarea asp-for="Comments" class="form-control" rows="3" placeholder="Enter comments"></textarea>
+                            <span asp-validation-for="Comments" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 25px;">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button style="margin-bottom: 25px;" onclick="goBack()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Go Back
+                </button>
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

@@ -64,34 +64,40 @@
         <div class="buttons">
             <tr>
                 <th>
-                    <button>
-                        <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/Deposit">
+                    <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/Deposit">
+                        <button>
+
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span> Deposit
-                        </a>
-                    </button>
+
+                        </button>
+                    </a>
                 </th>
                 <th>
-                    <button>
-                        <a>
+                    <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/Withdraw">
+                        <button>
+
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span> Withdraw
-                        </a>
-                    </button>
+
+                        </button>
+                    </a>
                 </th>
                 <th>
+                    <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/Transfer">
                     <button>
-                        <a>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span> Transfer
-                        </a>
+                        
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Transfer
+                        
                     </button>
+                    </a>
                 </th>
                 <th>
                     <button>

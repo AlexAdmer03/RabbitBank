@@ -23,14 +23,21 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <button style="margin-bottom: 25px;">
-                    <a class="button" href="#portfolio" style="text-decoration: none;">
+                <a class="button" style="text-decoration: none;">
+                    <button style="margin-bottom: 25px;" onclick="goBack()">
+
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span> Go Back
-                    </a>
-                </button>
+
+                    </button>
+                </a>
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
             </div>
         </div>
     </div>

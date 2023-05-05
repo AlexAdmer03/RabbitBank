@@ -38,7 +38,7 @@ namespace RabbitBank.Pages.Transactions
             var result = _transactionsService.Deposit(AccountId, Amount);
             if (result == ITransactionsService.ErrorCodes.OK)
             {
-                return RedirectToPage("/Transactions/Success", new { accountId = AccountId });
+                return RedirectToPage("/Transactions/SuccessPage", new { accountId = AccountId });
             }
             else
             {
