@@ -1,4 +1,5 @@
 ﻿namespace RabbitBank.Pages.ViewModels
+
 {
     public class TransactionsModel
     {

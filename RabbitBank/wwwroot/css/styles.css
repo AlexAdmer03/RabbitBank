@@ -283,7 +283,7 @@
     height: 100%;
     opacity: 0;
     transform-origin: bottom center;
-    animation: trembling 5s linear infinite, moveCoin 5s linear infinite;
+    animation: trembling 5s linear infinite, moveCoin 5s linear infinite reverse;
 }
 
 .coin {
@@ -316,56 +316,56 @@
     }
 
     21% {
-        top: 7px;
+        top: -7px;
     }
 
     22% {
-        top: 7px;
+        top: -7px;
     }
 
     23% {
-        top: 14px;
+        top: -14px;
     }
 
     24% {
-        top: 14px;
+        top: -14px;
     }
 
     25% {
-        top: 21px;
+        top: -21px;
     }
 
     26% {
-        top: 21px;
+        top: -21px;
     }
 
     27% {
-        top: 28px;
+        top: -28px;
     }
 
     28% {
-        top: 28px;
+        top: -28px;
     }
 
     29% {
-        top: 35px;
+        top: -35px;
     }
 
     30% {
-        top: 35px;
+        top: -35px;
     }
 
     60% {
-        top: 35px;
+        top: -35px;
     }
 
     66% {
-        top: 220px;
+        top: -220px;
         opacity: 1;
     }
 
     67% {
-        top: 220px;
+        top: -220px;
         opacity: 0;
     }
 

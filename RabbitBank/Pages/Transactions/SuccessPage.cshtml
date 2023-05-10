@@ -3,7 +3,12 @@
 @{
 }
 
-<div class="container">
+<div class="container" style="padding-bottom: 6.7%; padding-top: 6.7%;">
+    <div id="success-title" style="text-align: center;
+                                   color: #ffc800;
+                                   font-size: 30px;">
+        Successfull Transaction!
+    </div>
     <div class="piggy-wrapper">
         <div class="piggy-wrap">
             <div class="piggy">
@@ -27,5 +32,25 @@
         <div class="legs back"></div>
     </div>
 
-    <div class="button"> success</div>
+    <div class="text-center mt-4" style="padding-top: 100px;">
+        <a class="button" style="text-decoration: none;">
+            <button style="margin-bottom: 25px;" onclick="goBack()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Back to Customer
+
+            </button>
+        </a>
+        <script>
+        function goBack() {
+            window.history.go(-2);
+        }
+    </script>
+    </div>
+
+
 </div>
+
+

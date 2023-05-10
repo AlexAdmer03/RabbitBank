@@ -3,14 +3,19 @@
 @{
 }
 
-<div class="containerT" style="margin-top: 13.5%; margin-bottom: 8%">
-    <div class="rowT">
+<div class="containerT">
+    <div class="rowT" style="margin-bottom: -14%;" >
         <div class="col-md-6 offset-md-3">
             <div class="card border-primary" id="card">
                 <div class="card-body" style="background-color: #212529;">
                     <h3 class="card-title" style="text-align: center; color: #FFC800; font-size: 40px;">Withdraw</h3>
                     <form method="post" style="margin-top: 25px;">
                         <input type="hidden" asp-for="AccountId" />
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label asp-for="AccountId">Withdraw From Account ID</label>
+                            <input asp-for="AccountId" type="number" class="form-control" readonly>
+                            <span asp-validation-for="AccountId" class="text-danger"></span>
+                        </div>
                         <div class="form-group" style="margin-top: 25px;">
                             <label asp-for="Amount">Amount</label>
                             <input asp-for="Amount" type="number" class="form-control" placeholder="Enter amount">

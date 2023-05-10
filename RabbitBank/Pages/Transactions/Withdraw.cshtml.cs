@@ -18,7 +18,7 @@ namespace RabbitBank.Pages.Transactions
         public int AccountId { get; set; }
 
         [BindProperty]
-        [Required]
+        [Required(ErrorMessage = "Amount must be in the range 100 - 1000")]
         [Range(100, 10000)]
         public decimal Amount { get; set; }
 

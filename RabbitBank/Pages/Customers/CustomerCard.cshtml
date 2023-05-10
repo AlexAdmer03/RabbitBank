@@ -89,25 +89,25 @@
                 </th>
                 <th>
                     <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/Transfer">
-                    <button>
+                        <button>
                         
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span> Transfer
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span> Transfer
                         
-                    </button>
+                        </button>
                     </a>
                 </th>
                 <th>
-                    <button>
-                        <a>
+                    <a class="button" asp-route-accountId="@Model.CustomerCard.AccountId" asp-page="/Transactions/History">
+                        <button>
                             <span></span>
                             <span></span>
                             <span></span>
                             <span></span> History
-                        </a>
-                    </button>
+                        </button>
+                    </a>
                 </th>
             </tr>
 
@@ -136,5 +136,25 @@
                 </div>
             </div>
         </div>
+        
+        <div class="text-center mt-4">
+            <a class="button" style="text-decoration: none;">
+                <button style="margin-bottom: 25px;" onclick="goBack()">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Go Back
+
+                </button>
+            </a>
+            <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+        </div>
+
     </div>
+
 </section>

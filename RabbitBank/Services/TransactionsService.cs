@@ -13,12 +13,14 @@ namespace RabbitBank.Services
             _dbContext = dbContext;
         }
 
-        public List<TransactionsModel> GetTransactionsHistory(int accountId)
+        public List<TransactionsModel> GetTransactionsHistory(int accountId, int pageNumber, int pageSize)
         {
             var query = _dbContext.Transactions
                 .Where(t => t.AccountId == accountId)
                 .OrderByDescending(t => t.Date)
                 .OrderByDescending(t => t.TransactionId)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
                 .Select(t => new TransactionsModel()
                 {
                     AccountId = accountId,
@@ -28,7 +30,6 @@ namespace RabbitBank.Services
                     Amount = t.Amount,
                     Balance = t.Balance
                 });
-
 
             return query.ToList();
         }

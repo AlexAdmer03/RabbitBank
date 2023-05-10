@@ -27,12 +27,12 @@ namespace RabbitBank.Pages.Transactions
 
 
         [BindProperty]
-        [Required]
+        [Required(ErrorMessage = "You must enter a receiving account ID")]
         [Display(Name = "Receiving Account ID")]
         public int ReceivingAccountId { get; set; }
 
         [BindProperty]
-        [Required]
+        [Required(ErrorMessage = "Amount must be in the range 100 - 1000")]
         [Display(Name = "Amount")]
         [Range(100, 10000, ErrorMessage = "Amount must be between 100 and 10,000.")]
         public decimal Amount { get; set; }
@@ -61,7 +61,7 @@ namespace RabbitBank.Pages.Transactions
             if (result == ITransactionsService.ErrorCodes.OK)
             {
                 
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Transactions/SuccessPage");
             }
 
             

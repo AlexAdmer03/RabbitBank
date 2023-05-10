@@ -12,7 +12,7 @@ namespace RabbitBank.Services
             AccountNotFound,
             DestinationAccountId
         }
-        List<TransactionsModel> GetTransactionsHistory(int accountId);
+        List<TransactionsModel> GetTransactionsHistory(int accountIdm, int PageNumber, int PageSize);
 
         ErrorCodes Withdraw(int accountId, decimal amount);
         ErrorCodes Deposit(int accountId, decimal amount);

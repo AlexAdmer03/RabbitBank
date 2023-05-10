@@ -2,3 +2,79 @@
 @model RabbitBank.Pages.Transactions.HistoryModel
 @{
 }
+
+<div class="containerT">
+    <div class="rowT" style="margin-bottom: -20%;">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border-primary" id="card">
+                <div class="card-body" style="background-color: #212529;">
+                    <h3 class="card-title" style="text-align: center; color: #FFC800; font-size: 40px;">Transaction History</h3>
+
+                    <table class="table table-striped table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Transaction</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Balance</th>
+                        </tr>
+                        </thead>
+                        <tbody id="transactionsTableBody"> <!-- Add the ID here -->
+                        @foreach (var transaction in Model.Transactions)
+                        {
+                            <tr>
+                                <td>@transaction.Date</td>
+                                <td>@transaction.Transaction</td>
+                                <td>@transaction.Amount</td>
+                                <td>@transaction.Balance</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button id="showMoreButton" onclick="fetchMoreTransactions()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> Show More
+                </button>
+                
+                <script>
+                    let pageNumber = 2;
+
+                    function fetchMoreTransactions() {
+                        const accountId = @Model.AccountId;
+                        const url = `/Transactions/History?handler=MoreTransactions&accountId=${accountId}&pageNumber=${pageNumber}`;
+
+                        fetch(url)
+                            .then(response => response.text())
+                            .then(data => {
+                                const tableBody = document.getElementById('transactionsTableBody');
+                                tableBody.innerHTML += data;
+                                pageNumber++;
+                            })
+                            .catch(error => {
+                                console.error('Error fetching more transactions:', error);
+                            });
+                    }
+                </script>
+
+                <a class="button" style="text-decoration: none;">
+                    <button style="margin-bottom: 25px;" onclick="goBack()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Go Back
+                    </button>
+                </a>
+            </div>
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+        </div>
+    </div>
+</div>
