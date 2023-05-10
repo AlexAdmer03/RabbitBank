@@ -9,37 +9,54 @@
         <h1 style="text-align: center; margin-bottom: 15px; color: #ffc800">Top 10 Customers in "Norway" with the Highest Balance</h1>
         <table class="table table-borderless table-data3">
             <thead>
-                <tr style="color: aliceblue; font-size: 18px;">
-                    <th>Customer ID</th>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>National ID</th>
-                    <th>Balance</th>
-                    <th></th>
-                </tr>
+            <tr style="color: aliceblue; font-size: 18px;">
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>National ID</th>
+                <th>Balance</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var customer in Model.TopTenNor)
-                {
-                    <tr style="color: aliceblue">
-                        <td>@customer.CustomerId</td>
-                        <td>@($"{customer.Givenname} {customer.Surname}")</td>
-                        <td>@customer.City</td>
-                        <td>@customer.NationalId</td>
-                        <td >@customer.Balance</td>
-                        <td>
-                            <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="/Customers/CustomerCard" asp-route-customerId="@customer.CustomerId">
-                                Show More
-                            </a>
-                        </td>
-                    </tr>
-                    <tr id="more-info-@customer.CustomerId" class="collapse">
-                        <td colspan="6">
+            @foreach (var customer in Model.TopTenNor)
+            {
+                <tr style="color: aliceblue">
+                    <td>@customer.CustomerId</td>
+                    <td>@($"{customer.Givenname} {customer.Surname}")</td>
+                    <td>@customer.City</td>
+                    <td>@customer.NationalId</td>
+                    <td >@customer.Balance</td>
+                    <td>
+                        <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="/Customers/CustomerCard" asp-route-customerId="@customer.CustomerId">
+                            Show More
+                        </a>
+                    </td>
+                </tr>
+                <tr id="more-info-@customer.CustomerId" class="collapse">
+                    <td colspan="6">
                           
-                        </td>
-                    </tr>
-                }
+                    </td>
+                </tr>
+            }
             </tbody>
         </table>
+    </div>
+    <div class="text-center mt-4">
+        <a class="button" style="text-decoration: none;">
+            <button style="margin-bottom: 25px;" onclick="goBack()">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Go Back
+
+            </button>
+        </a>
+        <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
     </div>
 </div>
