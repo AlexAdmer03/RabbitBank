@@ -6,7 +6,7 @@
 
 <div class="Table-container">
 
-    <div class="table-responsive m-b-40" style="margin-top: 150px; margin-left: 170px; margin-bottom: 64px;">
+    <div class="table-responsive m-b-40" style="margin-top: 215px; margin-left: 170px;">
         <h1 style="text-align: center; margin-bottom: 15px; color: #ffc800">Top 10 Customers in "Sweden" with the Highest Balance</h1>
         <table class="table table-borderless table-data3">
             <thead>
@@ -28,11 +28,14 @@
                     <td>@customer.City</td>
                     <td>@customer.NationalId</td>
                     <td >@customer.Balance</td>
-                    <td>
-                        <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="/Customers/CustomerCard" asp-route-customerId="@customer.CustomerId">
-                            Show More
-                        </a>
-                    </td>
+                    @if (User.IsInRole("Cashier"))
+                    {
+                        <td>
+                            <a class="btn btn-secondary" role="button" style="background-color: #ffc800; color: #ffffff;" asp-page="/Customers/CustomerCard" asp-route-customerId="@customer.CustomerId">
+                                Show More
+                            </a>
+                        </td>
+                    }
                 </tr>
                 <tr id="more-info-@customer.CustomerId" class="collapse">
                     <td colspan="6">
