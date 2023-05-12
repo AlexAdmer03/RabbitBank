@@ -16,7 +16,7 @@
                 <input type="text" asp-for="City" class="form-control" placeholder="Search by city" />
             </div>
             <div class="col-md-4">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn" style="background-color: #ffc800; color: #ffffff;">Search</button>
             </div>
         </div>
     </form>
@@ -25,7 +25,7 @@
         <thead>
             <tr style="color: aliceblue;">
                 <th>
-                    <a asp-route-SortColumn="CustomerNumber" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">
+                    <a asp-route-SortColumn="CustomerNumber" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="color: #ffc800;">
                         Customer Number @(Model.SortColumn == "CustomerNumber" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
                     </a>
                 </th>
@@ -34,7 +34,7 @@
                 <th>Social Security Number</th>
 
                 <th>
-                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="Name" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
+                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="Name" style="color: #ffc800;" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
                         Name @(Model.SortColumn == "Name" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
                     </a>
                 </th>
@@ -42,7 +42,7 @@
                 <th>Address</th>
 
                 <th>
-                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="City" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
+                    <a asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" asp-route-SortColumn="City" style="color: #ffc800;" asp-route-SortOrder="@(Model.SortOrder == "asc" ? "desc" : "asc")">
                         City @(Model.SortColumn == "City" ? (Model.SortOrder == "asc" ? "▲" : "▼") : "")
                     </a>
                 </th>
