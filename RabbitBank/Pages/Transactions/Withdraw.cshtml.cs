@@ -1,10 +1,13 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RabbitBank.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace RabbitBank.Pages.Transactions
 {
+    [Authorize(Roles = "Cashier")]
     public class WithdrawModel : PageModel
     {
         private readonly ITransactionsService _transactionsService;

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RabbitBank.BankAppData;
@@ -5,6 +6,7 @@ using RabbitBank.Services;
 
 namespace RabbitBank.Pages.Customers
 {
+    [Authorize(Roles = "Cashier")]
     public class CustomerListModel : PageModel
     {
         private readonly ICustomerService _customerService;

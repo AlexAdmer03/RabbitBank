@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RabbitBank.Services;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Xml.Linq;
 
 namespace RabbitBank.Pages.Transactions
 {
+    [Authorize(Roles = "Cashier")]
     public class TransferModel : PageModel
     {
 
