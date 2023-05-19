@@ -11,22 +11,22 @@
                     <h3 class="card-title" style="text-align: center; color: #FFC800; font-size: 40px;">Transfer</h3>
                     <form method="post" style="margin-top: 25px;">
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="SendingAccountId">Sending Account ID</label>
+                            <label asp-for="SendingAccountId" style="color: #ffc800">Sending Account ID</label>
                             <input asp-for="SendingAccountId" type="number" class="form-control" placeholder="Enter sending account ID" readonly="@Model.AccountId.HasValue">
                             <span asp-validation-for="SendingAccountId" class="text-danger"></span>
                         </div>
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="ReceivingAccountId">Receiving Account ID</label>
+                            <label asp-for="ReceivingAccountId" style="color: #ffc800">Receiving Account ID</label>
                             <input asp-for="ReceivingAccountId" type="number" class="form-control" placeholder="Enter receiving account ID">
                             <span asp-validation-for="ReceivingAccountId" class="text-danger"></span>
                         </div>
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="Amount">Amount</label>
+                            <label asp-for="Amount" style="color: #ffc800">Amount</label>
                             <input asp-for="Amount" type="number" class="form-control" placeholder="Enter amount">
                             <span asp-validation-for="Amount" class="text-danger"></span>
                         </div>
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="Comments">Comments</label>
+                            <label asp-for="Comments" style="color: #ffc800">Comments</label>
                             <textarea asp-for="Comments" class="form-control" rows="3" placeholder="Enter comments"></textarea>
                             <span asp-validation-for="Comments" class="text-danger"></span>
                         </div>

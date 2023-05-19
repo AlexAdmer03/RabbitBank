@@ -6,7 +6,7 @@
 
 
 <div class="containerT">
-    <div class="rowT" style="margin-bottom: -14%; ">
+    <div class="rowT" style="margin-bottom: -11%; ">
         <div class="col-md-6 offset-md-3">
             <div class="card" id="card">
                 <div class="card-body" style="background-color: #212529;">
@@ -15,13 +15,13 @@
                         <input type="hidden" asp-for="AccountId" />
                         
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="AccountId">Deposit To Account ID</label>
+                            <label asp-for="AccountId" style="color: #ffc800">Deposit To Account ID</label>
                             <input asp-for="AccountId" type="number" class="form-control" readonly>
                             <span asp-validation-for="AccountId" class="text-danger"></span>
                         </div>
                         
                         <div class="form-group" style="margin-top: 25px;">
-                            <label asp-for="Amount">Amount</label>
+                            <label asp-for="Amount" style="color: #ffc800">Amount</label>
                             <input asp-for="Amount" type="number" class="form-control" placeholder="Enter amount">
                             <span asp-validation-for="Amount" class="text-danger"></span>
                         </div>
