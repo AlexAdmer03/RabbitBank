@@ -71,7 +71,7 @@
     <nav aria-label="Page navigation" style="margin-bottom: 40px; margin-top: 30px;">
         <ul class="pagination justify-content-center">
             <li class="page-item @(Model.PageNumber == 1 ? "active" : "")">
-                <a class="page-link" asp-route-PageNumber="1" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">1</a>
+                <a class="page-link" asp-route-PageNumber="1" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="color: #ffc800;">1</a>
             </li>
 
             @if (Model.PageNumber > 2)
@@ -84,21 +84,21 @@
             @if (Model.PageNumber > 1)
             {
                 <li class="page-item">
-                    <a class="page-link" asp-route-PageNumber="@(Model.PageNumber - 1)" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">@((Model.PageNumber - 1))</a>
+                    <a class="page-link" asp-route-PageNumber="@(Model.PageNumber - 1)" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="color: #ffc800;">@((Model.PageNumber - 1))</a>
                 </li>
             }
 
             @if (Model.PageNumber > 1 && Model.PageNumber < Model.TotalPages)
             {
                 <li class="page-item active">
-                    <a class="page-link" asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">@Model.PageNumber</a>
+                    <a class="page-link" asp-route-PageNumber="@Model.PageNumber" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="background-color: #ffc800; color: #ffffff;">@Model.PageNumber</a>
                 </li>
             }
 
             @if (Model.PageNumber < Model.TotalPages)
             {
                 <li class="page-item">
-                    <a class="page-link" asp-route-PageNumber="@(Model.PageNumber + 1)" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">@((Model.PageNumber + 1))</a>
+                    <a class="page-link" asp-route-PageNumber="@(Model.PageNumber + 1)" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="color: #ffc800;">@((Model.PageNumber + 1))</a>
                 </li>
             }
 
@@ -110,10 +110,11 @@
             }
 
             <li class="page-item @(Model.PageNumber == Model.TotalPages ? "active" : "")">
-                <a class="page-link" asp-route-PageNumber="@Model.TotalPages" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City">@Model.TotalPages</a>
+                <a class="page-link" asp-route-PageNumber="@Model.TotalPages" asp-route-SearchTerm="@Model.SearchTerm" asp-route-City="@Model.City" style="color: #ffc800;">@Model.TotalPages</a>
             </li>
         </ul>
     </nav>
+
     
     <div class="text-center mt-4">
         <a class="button" style="text-decoration: none;">
