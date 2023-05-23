@@ -1,5 +1,7 @@
 ReadMe.md
 
+Link to Azure https://rabbitbank.azurewebsites.net/
+
 Seeded Users
 Two users are seeded into the database:
 
