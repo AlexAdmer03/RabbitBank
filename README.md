@@ -9,7 +9,7 @@ User: richard.chalk@systementor.se
 Password: Hejsan123#
 Role: Admin
 
-User: richard.chalk@customer.systementor.se
+User: richard.chalk@gmail.se
 Password: Hejsan123#
 Role: Cashier
 
